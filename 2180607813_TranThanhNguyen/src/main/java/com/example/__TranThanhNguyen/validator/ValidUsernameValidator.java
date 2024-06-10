@@ -16,8 +16,8 @@ public class ValidUsernameValidator implements ConstraintValidator<ValidUsername
 
     @Override
     public boolean isValid(String username, ConstraintValidatorContext context) {
-        if (username == null) {
-            return false; // Null username is considered invalid
+        if (userRepository == null) {
+            return true; // Null username is considered invalid
         }
         // Return true if the username is not found in the database, indicating it is valid (i.e., unique)
         return userRepository.findByUsername(username) == null;

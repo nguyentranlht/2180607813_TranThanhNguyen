@@ -15,7 +15,7 @@ public class Book {
     private Long id;
 
     @Column(name = "title", length = 50)
-    @NotNull(message = "Title must not be null")
+    @NotEmpty(message = "Title must not be null")
     @Size(max = 50, message = "Title must be less then 50 characters")
     private String title;
 
